@@ -21,3 +21,10 @@ mvn compile jib:build
 '' We added the phases to the execution configuration section, with this when we execute 
 mvn clean package
 '' we add the phase build to upload this version to Docker Hub
+
+# To test the service we could execute the following command line
+docker run -p 8080:8082 registry.hub.docker.com/mullikaricardo/spring-jib-app
+
+// Command Line to remove local images docker
+docker rmi $(docker images -q)
+docker rm $(docker ps -a -q)
