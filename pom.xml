@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.mulrica</groupId>
 	<artifactId>jib</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<name>jib</name>
 	<description>Project to implement JIB from Google Cloud to create an Image Java Builder</description>
 
@@ -86,9 +86,16 @@
 					<from>
 						<image>openjdk:alpine</image>
 					</from>
-
-
 				</configuration>
+				<!-- Add phases to the build -->
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

@@ -12,12 +12,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 @RequestMapping("/greeting")
 public class GreetingRestController {
 
-    private static final String template = "Hello Docker, %s!";
+    private static final String template = "Welcome Docker, %s!";
     private final AtomicInteger counter = new AtomicInteger();
 
     @GetMapping
     public Greeting welcome(@RequestParam(value = "name",
-                                          defaultValue = "Anonymus") String name) {
+                                          defaultValue = "Anonymus guess") String name) {
         return Greeting.builder()
                         .id(counter.incrementAndGet())
                         .value(String.format(template,name))
