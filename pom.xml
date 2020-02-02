@@ -73,6 +73,21 @@
 					<to>
 						<image>${image.path}</image>
 					</to>
+
+					<!-- Configurer a specific server port to expose our container -->
+					<container>
+						<ports>
+							<port>8082</port>
+						</ports>
+					</container>
+
+					<!-- By default JIB uses FROM 'distro-less java image'
+							if we want to change this values we could override from section -->
+					<from>
+						<image>openjdk:alpine</image>
+					</from>
+
+
 				</configuration>
 			</plugin>
 		</plugins>
